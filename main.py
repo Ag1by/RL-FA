@@ -10,5 +10,9 @@ def read_root():
 def read_about():
     return {"world":"hello"}
 
+@app.get("/users/{user_id}")
+def read_user(user_id: str):
+    return {"id": user_id}
+
 if __name__ == "__main__":
     uvicorn.run("main:app",reload=True)

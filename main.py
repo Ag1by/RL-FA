@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import uvicorn
 
 app = FastAPI()
 
@@ -8,3 +9,6 @@ def read_root():
 @app.get("/hello")
 def read_about():
     return {"world":"hello"}
+
+if __name__ == "__main__":
+    uvicorn.run("main:app",reload=True)
